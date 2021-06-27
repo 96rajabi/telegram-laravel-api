@@ -1,0 +1,41 @@
+{
+    "name": "Mahdiidea/TelegramApi",
+    "authors": [
+        {
+            "name": "mahdi rajabi",
+            "email": "96rajabi@gmail.com"
+        }
+    ],
+    "keywords": [
+        "telegram",
+        "laravel",
+        "api",
+        "audio",
+        "video",
+        "docuemnt",
+        "group",
+        "channel",
+        "file",
+        "bot"
+    ],
+    "autoload": {
+        "psr-4": {
+            "Mahdiidea\\TelegramApi\\": "src/"
+        }
+    },
+    "license": "MIT",
+    "require": {
+        "guzzlehttp/guzzle": "^7.0.1"
+    },
+    "minimum-stability": "dev",
+    "extra": {
+        "laravel": {
+            "providers": [
+                "MahdiIDea\\TelegramApi\\TelegramApiServiceProvider"
+            ],
+            "aliases": {
+                "TelegramApi": "MahdiIDea\\TelegramApi"
+            }
+        }
+    }
+}
