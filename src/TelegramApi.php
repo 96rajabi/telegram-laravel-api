@@ -22,7 +22,8 @@ use Illuminate\Support\Facades\Facade;
  * @method static mixed sendAnimation(string $animation, array $array)
  * @method static mixed sendVoice(string $voice, array $array)
  * @method static mixed sendVideoNote(string $voiceNote, array $array)
-// * @method static mixed sendMediaGroup(array $media, array $array)
+ * @method static mixed sendLocation(mixed $latitude, mixed $longitude, array $array)
+ * @method static mixed sendContact(mixed $phone_number, mixed $first_name, array $array)
  *
  */
 class TelegramApi extends Facade

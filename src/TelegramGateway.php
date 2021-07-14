@@ -58,7 +58,7 @@ class TelegramGateway
         return json_decode($res->getBody());
     }
 
-    private function makeMultipart($key, $file, $array)
+    private function mergeMultipart($key, $file, $array)
     {
         $multipart = array([
             'name' => $key,
@@ -72,57 +72,57 @@ class TelegramGateway
         return $multipart;
     }
 
-//    public function sendMediaGroup($fileArray, $array)
-//    {
-//        $files = array();
-//        $multipart = array();
-//
-//        foreach ($fileArray as $item) {
-//            array_push($files, fopen($item, 'r'));
-//        }
-//
-//        array_push($multipart, ['name' => 'media', 'contents' => $files]);
-//
-//        foreach (array_keys($array) as $key) {
-//            array_push($multipart, ['name' => $key, 'contents' => $array[$key]]);
-//        }
-//
-//        return $this->multipart(__FUNCTION__, $multipart);
-//    }
+    private function mergeArray($array, $object)
+    {
+        foreach (array_keys($array) as $key) {
+            $object[$key] = $array[$key];
+        }
+        return $object;
+    }
+
+    public function sendContact($phone_number, $first_name, $array)
+    {
+        return $this->post(__FUNCTION__, $this->mergeArray(compact('phone_number', 'first_name'), $array));
+    }
 
     public function sendVideoNote($voiceNote, $array)
     {
-        return $this->multipart(__FUNCTION__, $this->makeMultipart('video_note', $voiceNote, $array));
+        return $this->multipart(__FUNCTION__, $this->mergeMultipart('video_note', $voiceNote, $array));
+    }
+
+    public function sendLocation($latitude, $longitude, $array)
+    {
+        return $this->post(__FUNCTION__, $this->mergeArray(compact('latitude', 'longitude'), $array));
     }
 
     public function sendVoice($voice, $array)
     {
-        return $this->multipart(__FUNCTION__, $this->makeMultipart('voice', $voice, $array));
+        return $this->multipart(__FUNCTION__, $this->mergeMultipart('voice', $voice, $array));
     }
 
     public function sendAnimation($animation, $array)
     {
-        return $this->multipart(__FUNCTION__, $this->makeMultipart('animation', $animation, $array));
+        return $this->multipart(__FUNCTION__, $this->mergeMultipart('animation', $animation, $array));
     }
 
     public function sendVideo($video, $array)
     {
-        return $this->multipart(__FUNCTION__, $this->makeMultipart('video', $video, $array));
+        return $this->multipart(__FUNCTION__, $this->mergeMultipart('video', $video, $array));
     }
 
     public function sendDocument($document, $array)
     {
-        return $this->multipart(__FUNCTION__, $this->makeMultipart('document', $document, $array));
+        return $this->multipart(__FUNCTION__, $this->mergeMultipart('document', $document, $array));
     }
 
     public function sendAudio($audio, $array)
     {
-        return $this->multipart(__FUNCTION__, $this->makeMultipart('audio', $audio, $array));
+        return $this->multipart(__FUNCTION__, $this->mergeMultipart('audio', $audio, $array));
     }
 
     public function sendPhoto($photo, $array)
     {
-        return $this->multipart(__FUNCTION__, $this->makeMultipart('photo', $photo, $array));
+        return $this->multipart(__FUNCTION__, $this->mergeMultipart('photo', $photo, $array));
     }
 
     public function copyMessage($array)
