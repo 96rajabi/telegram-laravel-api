@@ -1,5 +1,5 @@
 {
-    "name": "mahdiidea/telegram-api",
+    "name": "96rajabi/telegram-api",
     "authors": [
         {
             "name": "mahdi rajabi",
@@ -20,7 +20,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "Mahdiidea\\TelegramApi\\": "src/"
+            "96rajabi\\TelegramApi\\": "src/"
         }
     },
     "license": "MIT",
