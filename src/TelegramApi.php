@@ -24,7 +24,7 @@ use Illuminate\Support\Facades\Facade;
  * @method static mixed sendVideoNote(string $voiceNote, array $array)
  * @method static mixed sendLocation(mixed $latitude, mixed $longitude, array $array)
  * @method static mixed sendContact(mixed $phone_number, mixed $first_name, array $array)
- * @method static mixed getFile(string $file_id, array $array)
+ * @method static mixed getFile(string $file_id)
  *
  */
 class TelegramApi extends Facade

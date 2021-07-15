@@ -95,8 +95,8 @@ class TelegramGateway
         return $this->post(__FUNCTION__, $this->mergeArray(compact('latitude', 'longitude'), $array));
     }
 
-    public function getFile($file_id, $array) {
-        return $this->post(__FUNCTION__, $this->mergeArray(compact('file_id'), $array));
+    public function getFile($file_id) {
+        return $this->post(__FUNCTION__, compact('file_id'));
     }
 
     public function sendVoice($voice, $array)
