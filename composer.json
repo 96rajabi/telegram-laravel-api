@@ -31,10 +31,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "MahdiIDea\\TelegramApi\\TelegramApiServiceProvider"
+                "96rajabi\\TelegramApi\\TelegramApiServiceProvider"
             ],
             "aliases": {
-                "TelegramApi": "MahdiIDea\\TelegramApi"
+                "TelegramApi": "96rajabi\\TelegramApi"
             }
         }
     }
