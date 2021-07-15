@@ -27,7 +27,7 @@
     "require": {
         "guzzlehttp/guzzle": "^7.0.1"
     },
-    "minimum-stability": "0.1.6",
+    "minimum-stability": "dev",
     "extra": {
         "laravel": {
             "providers": [
