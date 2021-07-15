@@ -1,5 +1,5 @@
 {
-    "name": "96rajabi/telegram-api",
+    "name": "mahdiidea/telegram-api",
     "authors": [
         {
             "name": "mahdi rajabi",
@@ -20,21 +20,21 @@
     ],
     "autoload": {
         "psr-4": {
-            "96rajabi\\TelegramApi\\": "src/"
+            "Mahdiidea\\TelegramApi\\": "src/"
         }
     },
     "license": "MIT",
     "require": {
         "guzzlehttp/guzzle": "^7.0.1"
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "0.0.5",
     "extra": {
         "laravel": {
             "providers": [
-                "96rajabi\\TelegramApi\\TelegramApiServiceProvider"
+                "Mahdiidea\\TelegramApi\\TelegramApiServiceProvider"
             ],
             "aliases": {
-                "TelegramApi": "96rajabi\\TelegramApi"
+                "TelegramApi": "Mahdiidea\\TelegramApi"
             }
         }
     }
