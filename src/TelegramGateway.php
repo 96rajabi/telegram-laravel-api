@@ -27,7 +27,7 @@ class TelegramGateway
             'json' => $array
         ]);
 
-        return json_decode($res->getBody());
+        return json_decode($res->getBody(), true)['result'];
     }
 
     private function get($method)
